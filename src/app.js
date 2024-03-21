@@ -6,18 +6,16 @@ const bodyParser = require('body-parser')
 
 
 
-// Este enrutador contendrá las rutas para manejar las solicitudes HTTP para la raíz del sitio web
 const indexRouter = require ('./routes/index.routes');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-//necesitamos al modulo "path" para hacer una ruta absoluta 
 const path=require('path');
 
-const app=express();//instancia de la aplicación express
+const app=express();
 
 
 
 //************
-const puerto = 3000;
+const puerto = 3001;
 app.listen(puerto, () => {
   console.log(`Levantando un servidor con Express en el puerto ${puerto}`);
 });
