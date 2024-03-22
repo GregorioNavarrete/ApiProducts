@@ -31,50 +31,87 @@ const productService = {
                         { association: "Supports" }
                     ]
                 });
-               //console.log(products);
                 return products;
                 
             } catch (error) {
-                //para q al menos no se rompa la vista
-                //mandar un mensaje de error
+
                 return [];
             }    
         },
         getBy: async function (id) {
-            // Intenta obtener una película por su clave primaria (ID)
-            // También incluye información sobre los actores asociados a esa película.
-            return await db.Product.findByPk(id, {
-                include: [
-                    { association: "Languages" },
-                    { association: "Editorials" },
-                    { association: "Collections" },
-                    { association: "authors" },
-                    { association: "Genres" },
-                    { association: "Supports" }
-                ]
-            });
+            try{
+ 
+                let product = await db.Product.findByPk(id, {
+                    include: [
+                        { association: "Languages" },
+                        { association: "Editorials" },
+                        { association: "Collections" },
+                        { association: "authors" },
+                        { association: "Genres" },
+                        { association: "Supports" }
+                    ]
+                });
+                let OBJ={
+                    "title": product.title,
+                    "subtitle": product.subtitle,
+                    "price": product.price,
+                    "image": product.image,
+                    "description": product.description,
+                    "pages": product.pages,
+                    "edition": product.edition,
+                    "stock": product.stock,
+                    "discount": product.discount,
+                    "created": product.created,
+                    "updated": product.updated,
+                    "authors": this.ArrAuthors(product.authors),
+                    "genres": this.ArrGenre(product.Genres),
+                    "Languages": product.Languages.name,
+                    "Editorials": product.Editorials.name,
+                    "Collections": product.Collections.name,
+                    "Supports": product.Supports.name
+
+                }
+
+                return OBJ;
+            }catch(e){
+                console.log(e);
+                return [];
+            }
+         
     
+        },
+        ArrAuthors: function (Arr) {
+            let arreglo=[];
+            
+            
+            for(let i=0; i<Arr.length; i++){
+                let obj={
+                    "id_author":Arr[i].id_author,
+                    "name":Arr[i].name,
+                    "biography":Arr[i].biography,
+                    "image": Arr[i].image
+                };
+                arreglo.push(obj);
+            }
+            
+            return arreglo;
+        },
+        ArrGenre: function (Arr) {
+            let arreglo=[];
+            // let obj ={};
+            
+            for(let i=0; i<Arr.length; i++){
+                let obj={
+                    "id_genre": Arr[i].id_genre,
+                    "name": Arr[i].name,
+                    "image": Arr[i].image,
+                };
+                arreglo.push(obj);
+            }
+            
+            return arreglo;
         }
 
 }
 
 module.exports = productService;
-
-
-
-
-//para ver que regresa cada funcion del Service que voy configurando 
-//$ node src/data/productService.js 
-// la consulta tiene que ser asincrona, ya q las funciones son asincrenas y 
-//con solo "console.log(), decia pendiente y no esperaba la respuesta"
-
-// async function aux(){
-//     try {
-//         let aux = await productService.filter(req);
-//         console.log(aux);
-        
-//     } catch (error) {
-//         console.log(error);
-//     }}
-
-// aux();
