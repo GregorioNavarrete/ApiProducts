@@ -8,7 +8,11 @@ const userController = {
         try {
          
           let users = await userService.getAll();
-          res.json(users).status(200);
+          res.status(200).json({
+            count: users.length,
+            users: users,
+            
+          });
           
         } catch (error) { 
           console.log(error.message);
