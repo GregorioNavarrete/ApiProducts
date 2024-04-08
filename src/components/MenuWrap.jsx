@@ -23,50 +23,37 @@ export default function MenuWrap() {
                 <ul>
                 <li>
                     <Link to="/">
-                            <i className="bi bi-house" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-                            - Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/movies">
-                            <i className="bi bi-film" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-                            - Películas
-                        </Link>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className="bi bi-play-circle" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-                            - Cines
-                        </a>
-                    </li>
-                    <li>
-                        <Link to="/genres">
-                            <i className="bi bi-person" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-                            - Géneros
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/maspopulares">
-                            <i className="bi bi-bar-chart"></i>
-                            - Más populares
-                        </Link>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className="bi bi-tags"></i>
-                            - Promociones
-                        </a>
-                    </li>
-                    <li>
-                        <Link to="/statistics">
-                            <i className="bi bi-graph-up"></i>
-                            - Estadísticas
+                        <i class="fa-solid fa-house"  style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Home
                         </Link>
                     </li>
                     <li>
                         <Link to="/Libros">
-                            <i className="bi bi-graph-up"></i>
-                            - Libros
+                        <i class="fa-solid fa-book" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Libros
+                        </Link>
+                    </li>
+                    <li>
+                        <a href="/genres">
+                        <i class="fa-solid fa-tag" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Generos
+                        </a>
+                    </li>
+                    <li>
+                        <Link to="/genres">
+                        <i class="fa-solid fa-feather" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Autores
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/Novedades">
+                        <i class="fa-solid fa-star" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i> - Novedades
+                        </Link>
+                    </li>
+                    <li>
+                    <Link to="/Usuarios">
+                    <i class="fa-solid fa-user" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Usuarios
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/statistics">
+                        <i class="fa-solid fa-chart-line" style={{fontSize: "1.2rem", color: "#FAFCFE"}}></i>  - Estadísticas
                         </Link>
                     </li>
                 </ul>

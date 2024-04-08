@@ -1,24 +1,21 @@
 import { Route, Routes } from "react-router-dom";
 
-import GenresInDb from "./GenresInDb";
+import Generos from "./Generos/genres";
 import Error404 from "./Error404";
-import GenreDetail from "./GenreDetail";
-import Movies from "./Movies/Movies";
-import MasPopulares from "./MasPopulares/MasPopulares";
+import Novedades from "./Novedades/Novedades";
 import Statistics from "./Statistics/Statistics";
-import PreSales from "./PreSales/PreSales";
+import Home from "./PrismaHome/Home";
 import Libros from "./Libros/Libros";
+import Usuarios from "./Usuarios/Usuarios";
 
 export default function ContentWrap() {
   return (
     <>
       <main className="content-wrap">
         <Routes>
-          <Route path="/" exact element={<PreSales />} />
-          <Route path="/genres" exact element={<GenresInDb />} />
-          <Route path="/genres/:id" element={<GenreDetail />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/maspopulares" element={<MasPopulares />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/genres" exact element={<Generos />} />
+          <Route path="/novedades" element={<Novedades />} />
           <Route
             path="/statistics"
             element={
@@ -47,6 +44,7 @@ export default function ContentWrap() {
             }
           />
           <Route path="/Libros" element={<Libros />} />
+          <Route path="/Usuarios" element={<Usuarios />} />
           <Route component={Error404} />
         </Routes>
 

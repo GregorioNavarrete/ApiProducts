@@ -26,6 +26,8 @@ function Libros() {
 
     return (
         <main className="content-wrap">
+
+            <h2>Libros Prisma</h2>
             <div className="info-boxes">
 
                 <div className="info-box">
@@ -38,57 +40,22 @@ function Libros() {
                     </div>
                 </div>
             </div>
-            <div className="info-boxes">
-                {cat.map((elemento, i) => {
-                    return (
-                        <div key={i} className="info-box">
-                            {elemento && (
-                                <div className="product-item">
-                                    <p>Coleccion: {elemento.name}</p>
-                                    <p>Cantidad: {elemento.count}</p>
-                                    {/* Otros detalles del elemento */}
-                                </div>
-                            )}
-                        </div>
-                    );
-                })}
-            </div>
-
-            <div className="info-boxes">
-                <div className="info-box">
-                    <div className="products-list">
-                         {productos.length > 0 && (
-                        <div className="product-item">
-                            <div className="box-content">
-                                 <span className="big">
-                                Detalles del ultimo libro
-                            </span>
-                            </div>
-                           
-                            <p>Titulo:{productos[productos.length-1]?.title}</p>
-                            <p>Precio: {productos[productos.length-1]?.price}</p>
-                            <p>Id: {productos[productos.length-1]?.id}</p>
-                            {/* <p>Precio: {productos[productos.length-1]?.price}</p> */}
-                
-                        </div>
-                    )}
-                    </div> 
-                </div>
-            </div>
-
+        
+           
             <section className="content">
                 <h2 className="mt-3">Lista de Productos</h2>
-                <div className="products-list">
+               <div className="products-list"> <div className="info-boxes">
+                
                     {productos.map((producto, i) => (
-                        <div key={i} className="product-item">
+                       <div className="info-box"> <div key={i} className="product-item">
                             <h3>{producto.title}</h3>
                             <p>Precio: {producto.price}</p>
                             {/* Otros detalles del producto */}
-                        </div>
+                        </div></div>
                     ))}
-                </div>
-                <button>
-                    <Link to="/">Volver a Home</Link>
+                </div></div>
+                <button className='btn'>
+                    <Link className='btn-home' to="/"><i class="fa-solid fa-house"></i></Link>
                 </button>
             </section>
         </main>

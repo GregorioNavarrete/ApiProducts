@@ -16,11 +16,7 @@ img{
   width: 30%;
 }
 
-.img-pre{
-  width: 100%;
-  height: 100%;
-  
-}
+
 html,
 body {
   color: #99a0b0;
@@ -29,7 +25,7 @@ body {
   background-position: rigth bottom;
   font-size: 16px;
   line-height: 120%;
-  font-family: Open Sans, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 .dashboard {
   display: grid;
@@ -129,10 +125,12 @@ body {
 }
 .menu-wrap {
   grid-area: menu;
-  padding-bottom: 3em;
+  padding-top: 1em;
+  padding-bottom: 10em;
   overflow: auto;
   background: var(--celeste);
   border-right: 1px solid #ede8f0;
+
 }
 .menu-wrap .user {
   height: 80px;
@@ -144,7 +142,7 @@ body {
 }
 .menu-wrap .user .user-avatar {
   width: 160px;
-  margin:auto
+  margin:auto;
 }
 .menu-wrap .user .user-avatar img {
   display: block;
@@ -169,10 +167,10 @@ body {
   padding: 3em 0 0;
 }
 .menu-wrap nav h3 {
-  margin: 0;
-  font-size: 0.875em;
+  margin: 10px;
+  font-size: 1em;
   text-transform: uppercase;
-  color: #4b84fe;
+  color: var(--blanco);
   font-weight: 600;
 }
 .menu-wrap nav ul {
@@ -183,16 +181,16 @@ body {
 .menu-wrap nav li {
   display: block;
   padding: 0;
-  margin: 1em 0 0;
+  margin: 1.5em 0 0;
 }
 .menu-wrap nav li a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: #99a0b0;
+  color: var(--blanco);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.875em;
+  font-size: 0.9em;
   transition: color 0.15s ease;
 }
 .menu-wrap nav li a svg {
@@ -205,7 +203,7 @@ body {
   transition: fill 0.15s ease;
 }
 .menu-wrap nav li a:hover {
-  color: #1b253d;
+  color: var(--azul-oscuro);
 }
 .menu-wrap nav li a:hover svg path,
 .menu-wrap nav li a:hover svg circle {
@@ -220,9 +218,25 @@ body {
 }
 .content-wrap {
   grid-area: content;
-  padding: 3em;
+
   overflow: auto;
 }
+
+.content-wrap .img-pre{
+width: 100%;
+display: flex;
+justify-content: flex-end;
+align-content: flex-end;
+flex-wrap: wrap;
+
+}
+.content-wrap .img-pre img{
+  width: 30%;
+position: relative;
+top: 90px;
+
+  }
+
 .content-wrap .content-head {
   display: flex;
   align-items: center;
@@ -236,6 +250,10 @@ body {
   margin: 0;
   padding: 0;
 }
+.content-wrap .products-list{
+padding: 3em;
+}
+
 .content-wrap .content-head .action button {
   border: 0;
   background: #4b84fe;
@@ -257,7 +275,7 @@ body {
   transition: none;
 }
 .content-wrap .info-boxes {
-  padding: 3em 0 2em;
+  padding: 3em 2em 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 2em;
@@ -268,7 +286,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 3em;
+  padding: 2em 3em;
   border: 1px solid #ede8f0;
   border-radius: 5px;
 }
@@ -386,4 +404,32 @@ body {
 .content-wrap .person-boxes .person-box .box-actions button:hover svg path,
 .content-wrap .person-boxes .person-box .box-actions button:hover svg circle {
   fill: #2b3a60;
+}
+
+.content-wrap h2{
+  text-align: center;
+  font-family:'Merriweather', serif;
+  color: var(--cian);
+  font-size: 2.2em;
+  padding-top: 2em;
+}
+
+.content-wrap .btn{
+  border: none;
+  background: none;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.content-wrap .btn-home{
+  font-size: 2em;
+  text-align: center;
+  margin: auto;
+  color: var(--cian);
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.content-wrap .btn-home:hover{
+  color: var(--anaranjado);
 }
